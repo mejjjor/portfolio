@@ -21,7 +21,7 @@ export default function AnimatedButton({
     "relative px-6 py-3 font-medium text-center overflow-hidden group h-[60px] flex items-center justify-center";
 
   const variantClasses = {
-    primary: "bg-cyan-600 text-white hover:bg-cyan-700",
+    primary: "bg-cyan-700 text-white hover:bg-cyan-800",
     outline: "border-2 border-amber-600 text-amber-600 hover:bg-amber-600/10",
   };
 

@@ -9,8 +9,14 @@ interface SkillPanelProps {
 const SkillPanel: React.FC<SkillPanelProps> = ({ title, skills }) => {
   return (
     <div className="rounded-xl bg-neutral-800 p-6">
-      <h3 className="text-3xl font-bold pb-2">{title}</h3>
-      <ul className="flex flex-wrap justify-between">
+      <h3 className="text-3xl font-bold pb-2 relative inline-block">
+        {title}
+        <div
+          className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-transparent from-0% via-cyan-700 via-5% to-transparent to-100%"
+          style={{ width: "calc(100% + 100px)" }}
+        ></div>
+      </h3>
+      <ul className="flex flex-wrap justify-between mt-4">
         {skills.map((skill) => {
           return (
             <li
