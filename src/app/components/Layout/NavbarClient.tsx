@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 interface NavLink {
   id: string;
@@ -52,25 +53,44 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
 
   return (
     <>
-      <nav
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-black/80 backdrop-blur-sm py-4" : "py-8"
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <Link href="/">
-            <h1
-              className={`font-bold transition-all duration-300 ${
-                isScrolled ? "text-3xl" : "text-4xl"
-              }`}
-            >
-              <span className="animate-fade-in">Erik Aouizerate</span>
-            </h1>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            <Link href="/">
+              <h1
+                className={`font-bold transition-all duration-300 ${
+                  isScrolled ? "text-3xl" : "text-4xl"
+                }`}
+              >
+                <span>Erik Aouizerate</span>
+              </h1>
+            </Link>
+          </motion.div>
 
-          <ul className="hidden md:flex gap-8 text-lg">
-            {navLinks.map((link) => (
-              <li key={link.id}>
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="hidden md:flex gap-8 text-lg"
+          >
+            {navLinks.map((link, index) => (
+              <motion.li
+                key={link.id}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, delay: 0.1 + index * 0.05 }}
+              >
                 <a
                   href={`#${link.id}`}
                   className={`transition-colors duration-300 ${
@@ -83,11 +103,14 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
                 >
                   {link.label}
                 </a>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
 
-          <button
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="md:hidden text-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-md p-1"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -99,9 +122,9 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
             ) : (
               <FiMenu aria-hidden="true" />
             )}
-          </button>
+          </motion.button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Completely separate overlay */}
       {isMenuOpen && (

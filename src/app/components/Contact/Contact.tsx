@@ -1,5 +1,7 @@
+"use client";
 import Section from "../Layout/Section";
 import AnimatedButton from "../ui/AnimatedButton";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -9,14 +11,32 @@ export default function Contact() {
         <div className="absolute inset-0 bg-radial from-black from-40% to-transparent blur-3xl"></div>
 
         {/* Content */}
-        <div className="flex flex-col relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="flex flex-col relative z-10"
+        >
           <div className="max-w-3xl">
-            <h3 className="text-2xl sm:text-4xl font-bold mb-6">
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-2xl sm:text-4xl font-bold mb-6"
+            >
               Vous avez un projet ou vous voulez plus d&apos;informations ?
               Contactez-moi pour en savoir plus.
-            </h3>
+            </motion.h3>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <AnimatedButton
                 href="mailto:erik.aouizerate.pro@gmail.com"
                 variant="primary"
@@ -31,9 +51,9 @@ export default function Contact() {
               >
                 Mon CV
               </AnimatedButton>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </Section>
   );
