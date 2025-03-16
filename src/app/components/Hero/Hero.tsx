@@ -27,21 +27,21 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="absolute max-w-2xl px-4"
           >
             <div className="text-3xl sm:text-4xl md:text-5xl flex flex-col gap-6 font-semibold capitalize max-w-72 m-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
               >
                 développeur
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
                 className="text-cyan-600 mb-4 sm:mb-0"
               >
                 <Scramble values={["sénior", "lead", "architecte"]} />
@@ -49,7 +49,7 @@ export default function Hero() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
+                transition={{ delay: 0.6, duration: 0.4 }}
                 className="text-amber-600 mb-4 sm:mb-0"
               >
                 <Scramble
@@ -69,20 +69,19 @@ export default function Hero() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1, duration: 0.7 }}
+                transition={{ delay: 0.8, duration: 0.3 }}
                 className="text-emerald-700"
               >
                 <Scramble
                   values={[
                     "engageant",
-                    "communiquant",
-                    "curieux",
-                    "passionné",
-                    "autonome",
-                    "adaptable",
-                    "créatif",
                     "pédagogue",
                     "efficace",
+                    "curieux",
+                    "passionné",
+                    "créatif",
+                    "adaptable",
+                    "autonome",
                   ]}
                 />
               </motion.div>
@@ -90,7 +89,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.3, duration: 0.7 }}
+              transition={{ delay: 0.9, duration: 0.3 }}
               className="mt-12 text-base sm:text-lg md:text-xl text-center text-stone-300"
             >
               <p>
@@ -105,7 +104,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 0.7 }}
+              transition={{ delay: 1, duration: 0.3 }}
               className="mt-10 flex flex-col sm:flex-row gap-4 justify-between max-w-72 m-auto"
             >
               {/* Animated button for projects with continuous animation */}

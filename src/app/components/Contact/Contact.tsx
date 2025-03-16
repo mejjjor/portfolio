@@ -35,7 +35,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-8"
             >
               <AnimatedButton
                 href="mailto:erik.aouizerate.pro@gmail.com"

@@ -53,7 +53,7 @@ export default function AnimatedButton({
           }`}
         />
       </svg>
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 font-bold">{children}</span>
     </div>
   );
 
