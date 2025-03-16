@@ -134,7 +134,7 @@ export default function ProjectsDisplay({ projects }: ProjectsDisplayProps) {
           ></div>
 
           {/* Modal Content */}
-          <div className="relative bg-neutral-900 rounded-lg w-full max-w-6xl max-h-[95vh] overflow-hidden z-10 flex flex-col">
+          <div className="relative bg-neutral-900 rounded-lg w-full max-w-6xl max-h-[95dvh] overflow-hidden z-10 flex flex-col">
             <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white bg-neutral-800/80 rounded-full p-2 z-20"
