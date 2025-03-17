@@ -38,7 +38,7 @@ export const expertiseSkills: Skill[] = [
     name: "React",
     icon: reactIcon,
     description:
-      "Framework incontournable pour créer des interfaces utilisateur riches et réactives",
+      "Librairie incontournable pour créer des interfaces utilisateur riches et réactives",
   },
   {
     name: "NextJs",
