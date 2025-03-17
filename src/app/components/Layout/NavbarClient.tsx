@@ -53,19 +53,16 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
 
   return (
     <>
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-black/80 backdrop-blur-sm py-4" : "py-8"
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
           >
             <Link href="/">
               <h1
@@ -81,7 +78,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: 0.3 }}
             className="hidden md:flex gap-8 text-lg"
           >
             {navLinks.map((link, index) => (
@@ -89,7 +86,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
                 key={link.id}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: 0.1 + index * 0.05 }}
+                transition={{ duration: 0.2 }}
               >
                 <a
                   href={`#${link.id}`}
@@ -110,7 +107,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: 0.3 }}
             className="md:hidden text-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-md p-1"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -124,7 +121,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
             )}
           </motion.button>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Completely separate overlay */}
       {isMenuOpen && (

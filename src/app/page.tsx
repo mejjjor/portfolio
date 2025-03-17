@@ -14,8 +14,10 @@ export default function Home() {
       >
         Aller au contenu principal
       </a>
-      <Navbar />
-      <Hero />
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+      </div>
       <Skills />
       <Projects />
       <Contact />
