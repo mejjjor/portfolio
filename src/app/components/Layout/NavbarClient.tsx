@@ -81,7 +81,7 @@ export default function NavbarClient({ navLinks }: NavbarClientProps) {
             transition={{ duration: 0.3 }}
             className="hidden md:flex gap-8 text-lg"
           >
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <motion.li
                 key={link.id}
                 initial={{ opacity: 0, y: -10 }}
