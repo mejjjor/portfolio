@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({ weight: ["400"], subsets: ["latin"] });
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,7 +55,9 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://erik-aouizerate.me" />
       </head>
-      <body className="overflow-x-hidden w-full">{children}</body>
+      <body className={`overflow-x-hidden w-full ${manrope.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
